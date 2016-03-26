@@ -30,6 +30,5 @@ public class CommandLineApp {
         System.out.println("Ending Process ...");
         
         
-       new JTable();
     }
 }
