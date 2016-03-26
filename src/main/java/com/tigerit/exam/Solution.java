@@ -17,14 +17,19 @@ public class Solution implements Runnable {
         // your application entry point
 
         // sample input process
+    	System.out.println("Insert Number of test");
+    	int numberOfTest= IO.readLineAsInteger();
         factory = new TableFactory();
         System.out.println("Insert Number of Table");
         Integer numberOfTable = IO.readLineAsInteger();
-        for(int i = 0; i< numberOfTable; i++){
-        	System.out.println("Insert Table Name");
-        	TableModel table = factory.createTable(IO.readLine());
-        	
-        	System.out.println(table.toString());
+        for(int test = 1; test <= numberOfTest ; test++){
+        	System.out.println("Test: "+ test );
+			for (int i = 0; i < numberOfTable; i++) {
+				System.out.println("Insert Table Name");
+				TableModel table = factory.createTable(IO.readLine());
+
+				System.out.println(table.toString());
+			}
         }
 
         //Integer integer = readLineAsInteger();
