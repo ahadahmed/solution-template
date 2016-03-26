@@ -15,7 +15,7 @@ public class IO {
 
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    private IO() {}
+    IO() {}
 
     public static String readLine() {
         String value;
@@ -32,6 +32,21 @@ public class IO {
     }
 
     public static void printLine(Object value) {
-        System.out.println(value);
+        System.out.println(readLine());
+    }
+    
+    public static Integer[] readLineAsIntegers(String lineOfIntegers){
+    	Integer[] values;
+    	String[] numbers = lineOfIntegers.split(" ");
+    	values = new Integer[numbers.length];
+    	for(int i = 0; i< numbers.length; i++){
+    		try{
+    			
+    			values[i] = Integer.valueOf(numbers[i]);
+    		}catch(NumberFormatException e){
+    			System.err.println("The number is not valid integer");
+    		}
+    	}
+    	return values;
     }
 }

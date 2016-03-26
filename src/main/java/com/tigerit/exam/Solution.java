@@ -10,17 +10,27 @@ import static com.tigerit.exam.IO.*;
  * application's execution points start from inside run method.
  */
 public class Solution implements Runnable {
+	
+	private TableFactory factory;
     @Override
     public void run() {
         // your application entry point
 
         // sample input process
-        String string = readLine();
+        factory = new TableFactory();
+        System.out.println("Insert Number of Table");
+        Integer numberOfTable = IO.readLineAsInteger();
+        for(int i = 0; i< numberOfTable; i++){
+        	System.out.println("Insert Table Name");
+        	TableModel table = factory.createTable(IO.readLine());
+        	
+        	System.out.println(table.toString());
+        }
 
-        Integer integer = readLineAsInteger();
+        //Integer integer = readLineAsInteger();
 
         // sample output process
-        printLine(string);
-        printLine(integer);
+        //printLine(string);
+        //printLine(integer);
     }
 }
